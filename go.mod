@@ -45,6 +45,8 @@ require (
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/gorilla/css v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.11 // indirect
+	github.com/kataras/golog v0.1.8 // indirect
+	github.com/kataras/pio v0.0.11 // indirect
 	github.com/klauspost/compress v1.11.7 // indirect
 	github.com/kr/pretty v0.2.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
