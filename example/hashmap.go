@@ -12,4 +12,7 @@ func main() {
 	fmt.Println(m.Get("amount1"))
 
 	fmt.Println(m.Get("amount2"))
+	fmt.Println(m.Len())
+	fmt.Println(m.GetStringKey("amount2"))
+	fmt.Println(m.GetOrInsert("amount", 3434))
 }
