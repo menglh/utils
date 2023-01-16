@@ -1,4 +1,4 @@
-package folder_util
+package folderutil
 
 import (
 	"os"

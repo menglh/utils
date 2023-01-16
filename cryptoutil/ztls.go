@@ -1,4 +1,4 @@
-package crypto_util
+package cryptoutil
 
 import (
 	"crypto/sha256"

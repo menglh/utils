@@ -1,4 +1,4 @@
-package slice_util
+package sliceutil
 
 import (
 	"fmt"

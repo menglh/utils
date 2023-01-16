@@ -1,4 +1,4 @@
-package exec_util
+package executil
 
 import (
 	"encoding/base64"

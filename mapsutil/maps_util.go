@@ -1,4 +1,4 @@
-package maps_util
+package mapsutil
 
 import (
 	"bytes"
