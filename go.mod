@@ -5,11 +5,12 @@ go 1.19
 require (
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
 	github.com/cornelk/hashmap v1.0.1
+	github.com/kataras/pio v0.0.11
+	github.com/menglh/golog v0.0.0-20230117082234-66a7c7d4f3c9
 	github.com/microcosm-cc/bluemonday v1.0.21
 	github.com/miekg/dns v1.1.50
 	github.com/pkg/errors v0.9.1
 	github.com/projectdiscovery/fdmax v0.0.4
-	github.com/projectdiscovery/gologger v1.1.4
 	github.com/projectdiscovery/ipranger v0.0.4
 	github.com/projectdiscovery/utils v0.0.3
 	github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d
@@ -44,15 +45,9 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/gorilla/css v1.0.0 // indirect
-	github.com/json-iterator/go v1.1.11 // indirect
-	github.com/kataras/golog v0.1.8 // indirect
-	github.com/kataras/pio v0.0.11 // indirect
 	github.com/klauspost/compress v1.11.7 // indirect
 	github.com/kr/pretty v0.2.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
-	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/projectdiscovery/blackrock v0.0.0-20220628111055-35616c71b2dc // indirect
 	github.com/projectdiscovery/fileutil v0.0.1 // indirect
