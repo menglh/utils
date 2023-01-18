@@ -56,6 +56,7 @@ require (
 	github.com/projectdiscovery/mapcidr v1.0.3 // indirect
 	github.com/projectdiscovery/networkpolicy v0.0.2-0.20220525172507-b844eafc878d // indirect
 	github.com/projectdiscovery/stringsutil v0.0.1 // indirect
+	github.com/spf13/afero v1.9.3 // indirect
 	github.com/syndtr/goleveldb v1.0.0 // indirect
 	github.com/weppos/publicsuffix-go v0.15.1-0.20220724114530-e087fba66a37 // indirect
 	github.com/yl2chen/cidranger v1.0.2 // indirect
