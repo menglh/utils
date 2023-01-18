@@ -2,8 +2,8 @@ package iputil
 
 import (
 	"context"
-	"errors"
 	"fmt"
+	"github.com/pkg/errors"
 	"go.uber.org/multierr"
 	"io"
 	"net"
@@ -313,4 +313,55 @@ func GetBindableAddress(port int, ips ...string) (string, error) {
 	}
 
 	return "", errs
+}
+
+// GetOutboundIPs 收集默认出站 ipv4 和 ipv6
+func GetOutboundIPs() (net.IP, net.IP, error) {
+	// collect default outbound ipv4 and ipv6
+	srcIPv4, err := GetSourceIP("128.199.158.128") // scanme.sh
+	if err != nil {
+		return nil, nil, errors.Wrap(err, "couldn't determine ipv4 routing interface")
+	}
+
+	// ignores errors on ipv6 routing
+	srcIPv6, err := GetSourceIP("2400:6180:0:d0::91:1001") // scanme.sh
+	if err != nil {
+		return srcIPv4, nil, errors.Wrap(err, "couldn't determine ipv6 routing interface")
+	}
+
+	return srcIPv4, srcIPv6, nil
+}
+
+func GetInterfaceByIp(ip net.IP) (*net.Interface, error) {
+	interfaces, err := net.Interfaces()
+	if err != nil {
+		return nil, err
+	}
+	for _, itf := range interfaces {
+		addresses, err := itf.Addrs()
+		if err != nil {
+			return nil, err
+		}
+		for _, address := range addresses {
+			ipNet, ok := address.(*net.IPNet)
+			if !ok || ipNet == nil {
+				continue
+			}
+			ipAddress := ipNet.IP
+			// check if they are equal
+			areEqual := ipAddress.Equal(ip)
+			if !areEqual {
+				continue
+			}
+			// double check if they belongs to the same family as go standard library is faulty
+			switch {
+			case IsIPv4(ip, ipAddress):
+				return &itf, nil
+			case IsIPv6(ip, ipAddress):
+				return &itf, nil
+			}
+		}
+	}
+
+	return nil, errors.New("interface not found")
 }

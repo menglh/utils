@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	//请求一个空闲端口
 	fmt.Println(iputil.GetFreePort())
 	//domain := "wxapi.soyoung.com"
 	domain := "www.baidu.com"
