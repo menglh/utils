@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-	strings_util "utils/strings_util"
+	stringsutil "utils/stringsutil"
 )
 
 var (
@@ -88,12 +88,12 @@ func IsIPv4(ips ...interface{}) bool {
 		switch ipv := ip.(type) {
 		case string:
 			parsedIP := net.ParseIP(ipv)
-			isIP4 := parsedIP != nil && parsedIP.To4() != nil && strings_util.ContainsAny(ipv, ".")
+			isIP4 := parsedIP != nil && parsedIP.To4() != nil && stringsutil.ContainsAny(ipv, ".")
 			if !isIP4 {
 				return false
 			}
 		case net.IP:
-			isIP4 := ipv != nil && ipv.To4() != nil && strings_util.ContainsAny(ipv.String(), ".")
+			isIP4 := ipv != nil && ipv.To4() != nil && stringsutil.ContainsAny(ipv.String(), ".")
 			if !isIP4 {
 				return false
 			}
@@ -150,12 +150,12 @@ func IsIPv6(ips ...interface{}) bool {
 		switch ipv := ip.(type) {
 		case string:
 			parsedIP := net.ParseIP(ipv)
-			isIP6 := parsedIP != nil && parsedIP.To16() != nil && strings_util.ContainsAny(ipv, ":")
+			isIP6 := parsedIP != nil && parsedIP.To16() != nil && stringsutil.ContainsAny(ipv, ":")
 			if !isIP6 {
 				return false
 			}
 		case net.IP:
-			isIP6 := ipv != nil && ipv.To16() != nil && strings_util.ContainsAny(ipv.String(), ":")
+			isIP6 := ipv != nil && ipv.To16() != nil && stringsutil.ContainsAny(ipv.String(), ":")
 			if !isIP6 {
 				return false
 			}
