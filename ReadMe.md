@@ -31,7 +31,8 @@
 * permission 
 * ratelimit 
 * sizewaitgroup
-* stringsutil
+* strutil
+  1. 
 
 ## 常用包
 * go验证器 github.com/asaskevich/govalidator
